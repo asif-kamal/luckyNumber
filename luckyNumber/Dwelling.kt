@@ -16,6 +16,15 @@ fun main() {
        println("Capacity: ${capacity}")
        println("Has room? ${hasRoom()}")
    }
+   
+   val roundTower = RoundTower(4)
+   
+   with(roundTower){
+       println("\nRound Tower\n==========")
+       println("Material: ${buildingMaterial}")
+       println("Capacity: ${capacity}")
+       println("Has room? ${hasRoom()}")
+   }
 }
 
 abstract class Dwelling(private var residents: Int) {
@@ -33,7 +42,12 @@ class SquareCabin(residents: Int) : Dwelling(residents) {
     override val capacity = 6
 }
 
-class RoundHut(residents: Int) : Dwelling(residents) {
+open class RoundHut(residents: Int) : Dwelling(residents) {
     override val buildingMaterial = "Straw"
+    override val capacity = 4
+}
+
+class RoundTower(residents: Int) : RoundHut(residents) {
+    override val buildingMaterial = "Stone"
     override val capacity = 4
 }
