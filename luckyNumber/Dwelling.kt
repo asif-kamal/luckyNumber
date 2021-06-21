@@ -47,7 +47,7 @@ open class RoundHut(residents: Int) : Dwelling(residents) {
     override val capacity = 4
 }
 
-class RoundTower(residents: Int) : RoundHut(residents) {
+class RoundTower(residents: Int, val floors: Int = 2) : RoundHut(residents) {
     override val buildingMaterial = "Stone"
-    override val capacity = 4
+    override val capacity = 4 * floors
 }
