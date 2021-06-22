@@ -68,6 +68,6 @@ class RoundTower(residents: Int, radius: Double,
     				override val capacity = 4 * floors
     
     				override fun floorArea(): Double {
-                        return PI * radius * radius * floors
+                        return super.floorArea() * floors
                     }
 }
