@@ -53,7 +53,7 @@ class SquareCabin(residents: Int, val length: Double) : Dwelling(residents) {
     }
 }
 
-open class RoundHut(residents: Int) : Dwelling(residents) {
+open class RoundHut(residents: Int, val radius: Double) : Dwelling(residents) {
     override val buildingMaterial = "Straw"
     override val capacity = 4
     
