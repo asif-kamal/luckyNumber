@@ -1,5 +1,5 @@
 import kotlin.math.PI
-import.kotlin.math.sqrt
+import kotlin.math.sqrt
 
 fun main() {
     val squareCabin = SquareCabin(6, 50.0)
