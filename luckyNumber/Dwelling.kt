@@ -1,4 +1,5 @@
 import kotlin.math.PI
+import.kotlin.math.sqrt
 
 fun main() {
     val squareCabin = SquareCabin(6, 50.0)
@@ -18,6 +19,9 @@ fun main() {
        println("Material: ${buildingMaterial}")
        println("Capacity: ${capacity}")
        println("Has room? ${hasRoom()}")
+       getRoom()
+       println("Has room? ${hasRoom()}")
+       getRoom()
        println("Floor area: %.2f".format(floorArea()))
    }
    
@@ -42,6 +46,14 @@ abstract class Dwelling(private var residents: Int) {
     fun hasRoom(): Boolean {
         return residents < capacity
     } 
+    fun getRoom() {
+        if (capacity > residents) {
+            residents++
+            println("You got a room!")
+        } else {
+            println("Sorry, at capacity and no rooms left.")
+        }
+    }
 }
 
 class SquareCabin(residents: Int, val length: Double) : Dwelling(residents) {
